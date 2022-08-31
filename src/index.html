@@ -1,0 +1,211 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dapp Sample Code</title>
+    <link rel="stylesheet" href="mycss.css"></head>
+        
+  </head>
+
+  <style> 
+    span.uppercase {
+      text-transform: uppercase;
+    }  
+    h3.text {
+      color:rgb(9, 216, 243);
+    }
+    body.img {
+      position: absolute;
+    }
+  </style>
+
+
+  <body class= "img" background="blockchain.webp" position: absolute; style="background-color:powderblue;">
+
+    <div class="center">
+
+      <div class="left">
+
+      <h3 class= "text">Network: <span class= "uppercase" id="network" ></span> </h3> 
+      
+      <h3 class= "text">ChainId: <span id="chainId" ></span> </h3>
+
+      <h3 class= "text">Accounts: <span id="Account" ></span> </h3>
+
+      <h3 class= "text">Balance: <span id="Balance" ></span> </h3> <br> <br>
+
+      <button id="connectButton" style="background-color:#18d8e6;;height:25px;width:200px;margin-right:100px"> Connect </button>
+
+      <button id="disConnectButton" style="background-color:#18d8e6;height:25px;width:200px"> DisConnect </button> <br> <br> <br> <br>
+
+      <input type="text" id='address_id'  style="width: 100px;" placeholder="address" style= "margin-right:20px"></input> 
+      <input type="number" id='index_id'  style="width: 100px;" placeholder="index" style= "margin-right:20px"></input>
+      <input type="number" id='quantity_id' placeholder="supply" style= "margin-right:20px"></input> <br> <br>
+
+      <button id="generateId" value="Button" style='margin-right:110px;background-color:#18d8e6;'>Generate Id</button><br> <br>
+
+      <select name="Category" id="rCategory">
+        <option>Category</option>
+        <option value="Real Estate">Real Estate</option>
+        <option value="Cars">Cars</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Art">Art</option>  
+      </select>     
+
+      <input type="text" id='uri' placeholder="tokenURI" style="margin-right:20px" name = "uri"></input>
+      <input type="number" id='rFee' placeholder="royaltyFee" style="margin-right:20px" name = "rFee"></input>
+      <input type="number" id='supply' placeholder="supply" style="margin-right:20px" name = "supply"></input> <br> <br>
+
+      <button id="mint721" value="Button" style='margin-right:110px;background-color:#18d8e6;'>Mint721</button>
+
+      <button id="mint1155" value="Button" style='margin-right:110px;background-color:#18d8e6;'>Mint1155</button> <br> <br> <br>
+
+
+
+      <select name="nftType" id="nftType">
+        <option>AssetType</option>
+        <option value="0">ERC1155</option>
+        <option value="1">ERC721</option>
+      </select> <br> <br>
+
+      <button id="approveNft" value="Button" style='margin-right:110px;background-color:#18d8e6;' >ApproveNFT</button> <br> <br> <br>
+
+
+      <select name="assetType" id="assetType">
+        <option>AssetType</option>
+        <option value="0">ERC1155</option>
+        <option value="1">ERC721</option>
+        <option value="2">lazyMint1155</option>
+        <option value="3">lazyMint721</option>
+      </select>
+
+      <select name="paymentAsset" id="paymentAsset">
+        <option>paymentToken</option>
+        <option value="0xc778417E063141139Fce010982780140Aa0cD5Ab">WETH</option>
+        <option value="0x243C332e1F42c46209498e409A5667d908A706F6">Anchor</option>
+        <option value="0xCb69291Da61c73fb9E018C27235534D875D28b49">NIOB</option>
+      </select>
+
+      <input type="number" id='tokenId'  style="width: 100px;" placeholder="tokenId" style= "margin-right:20px"></input> 
+      <input type="number" id='nftPrice'  style="width: 100px;" placeholder="nftPrice" style= "margin-right:20px"></input>
+      <input type="number" id='quantity' placeholder="quantity" style= "margin-right:20px"></input> <br> <br>
+
+      <button id="signseller" value="Button" style= "margin-right:100px;background-color:#18d8e6;"> sign seller </button>
+
+      <button id="signbid" value="Button" style='margin-right:110px;background-color:#18d8e6;'> sign Bid </button> <br> <br> <br>
+
+
+      <select name="buynftType" id="buynftType">
+        <option>AssetType</option>
+        <option value="1">NFT721</option>
+        <option value="0">NFT1155</option>
+      </select>
+      <select name="paymentAddress" id="paymentAddress">
+        <option>paymentToken</option>
+        <option value="0xc778417E063141139Fce010982780140Aa0cD5Ab">WETH</option>
+        <option value="0x243C332e1F42c46209498e409A5667d908A706F6">Anchor</option>
+        <option value="0xCb69291Da61c73fb9E018C27235534D875D28b49">NIOB</option>
+      </select>
+      <input type="number" id='buytokenId'  style="width: 100px;" placeholder="tokenId" style= "margin-right:20px"></input>
+      <input type="number" id='buynftPrice' style="width: 100px;" placeholder="nftPrice" style= "margin-right:20px"></input>
+      <input type="text" id='buysignValue' placeholder="signValue" style= "margin-right:20px"></input>
+      <input type="text" id='buysellerAddress' placeholder="sellerAddress" style= "margin-right:20px"></input>
+      <input type="number" id='buyquantity' placeholder="quantity" style= "margin-right:20px"></input> <br> <br>
+
+
+      <button id="buy" value="Button"  style= "margin-right:100px;background-color:#18d8e6;"> BuyAsset </button> <br> <br> <br>
+
+      <select name="bidnftType" id="bidnftType">
+        <option>AssetType</option>
+        <option value="0">NFT721</option>
+        <option value="1">NFT1155</option>
+      </select>
+      <input type="number" id='bidtokenId'  style="width: 100px;" placeholder="tokenId" style= "margin-right:20px"></input>
+      <input type="number" id='bidnftPrice'  style="width: 100px;" placeholder="nftPrice" style= "margin-right:20px"></input>
+      <input type="text" id='bidsignValue' placeholder="signValue" style= "margin-right:20px"></input>
+      <input type="text" id='bidbuyerAddress' placeholder="buyerAddress" style= "margin-right:20px"></input>
+      <input type="number" id='bidquantity' placeholder="quantity" style= "margin-right:20px"></input> <br> <br>
+
+      <button id="bid" value="Button" style='margin-right:110px;background-color:#18d8e6;'> ExecuteBid </button> <br> <br> <br>
+
+      
+      <select name="mbuynftType" id="mbuynftType">
+        <option>AssetType</option>
+        <option value="3">lazyMint721</option>
+        <option value="2">lazyMint1155</option>
+      </select>
+
+      <input type="number" id='mbuytokenId'  style="width: 100px;" placeholder="tokenId" style= "margin-right:20px"></input>
+      <input type="number" id='mbuyrFee'  style="width: 100px;" placeholder="royaltyFee" style= "margin-right:20px"></input>
+      <input type="number" id='mbuynftPrice'  style="width: 100px;" placeholder="nftPrice" style= "margin-right:20px"></input>
+      <input type="text" id='mbuysignValue' placeholder="signValue" style= "margin-right:20px"></input>
+      <input type="text" id='mbuysellerAddress' placeholder="sellerAddress" style= "margin-right:20px"></input>
+      <input type="number" id='mbuyquantity'  style="width: 100px;" placeholder="quantity" style= "margin-right:20px"></input>
+      <input type="text" id='mbuyuri' placeholder="tokenURI" style= "margin-right:20px"></input>
+      <input type="number" id='mbuysupply' style="width: 100px;" placeholder="supply" style= "margin-right:20px"></input> <br> <br>
+
+
+
+      <button id="mBuy" value="Button" style='margin-right:110px;background-color:#18d8e6;'> MintAndBuyAsset </button> <br> <br> <br>  
+
+      <select name="mbidnftType" id="mbidnftType">
+        <option>AssetType</option>
+        <option value="3">lazyMint721</option>
+        <option value="2">lazyMint1155</option>
+      </select>
+      <input type="number" id='mbidtokenId'  style="width: 100px;" placeholder="tokenId"></input>
+      <input type="number" id='mbidrFee'  style="width: 100px;" placeholder="royaltyFee" style= "margin-right:20px"></input>
+      <input type="number" id='mbidnftPrice'  style="width: 100px;" placeholder="nftPrice" ></input>
+      <input type="text" id='mbidsignValue' placeholder="signValue"></input>
+      <input type="text" id='mbidbuyerAddress' placeholder="buyerAddress"></input>
+      <input type="number" id='mbidquantity'  style="width: 100px;" placeholder="quantity"></input> 
+      <input type="text" id='mbiduri' placeholder="tokenURI" ></input> 
+      <input type="number" id='mbidsupply' style="width: 100px;" placeholder="supply"></input> <br> <br>
+
+
+      <button id="mBid" value="Button" style='margin-right:110px;background-color:#18d8e6;'> MintAndAcceptBid </button> <br> <br> <br>
+
+
+      <select name="ownNftType" id="ownNftType">
+        <option>AssetType</option>
+        <option value="1">ERC721</option>
+        <option value="0">ERC1155</option>
+      </select>
+      <input type="text" id='ownNftName' placeholder="Name" ></input> 
+      <input type="text" id='ownNftSymbol' placeholder="Symbol"></input> <br> <br>
+
+      <button id="deploy" value="Button" style='margin-right:110px;background-color:#18d8e6;'> Deploy </button> <br> <br>
+
+      <input type="text" id='recipient' placeholder="recipient" ></input> 
+      <input type="number" id='amount' placeholder="amount"></input> <br> <br>
+
+      <button id="tokenTransfer" value="Button" style='margin-right:110px;background-color:#18d8e6;'> tokenTransfer </button> <br> <br>
+
+      <button id="gFees" value="Button" style='margin-right:110px;background-color:#18d8e6;'> getFees </button> <br> <br>
+
+      <button id="operator" value="Button" style='margin-right:110px;background-color:#18d8e6;'> Change Operator </button> <br> <br>
+
+      <select name="stakeNftType" id="stakeNftType">
+        <option>AssetType</option>
+        <option value="1">ERC721</option>
+        <option value="0">ERC1155</option>
+      </select>      
+      <input type="number" id='stakeLevel' placeholder="stakeLevel"></input>
+      <input type="number" id='stakeTokenId' placeholder="stakeTokenId"></input> <br> <br>
+      
+      <button id="stake" value="Button" style='margin-right:110px;background-color:#18d8e6;'> stake </button> <br> <br>
+
+      <input type="number" id='stakeId' placeholder="stakeId"></input> <br> <br>
+
+      <button id="unStake" value="Button" style='margin-right:110px;background-color:#18d8e6;'> UnStake </button> <br> <br>
+
+    </div>
+  </div>
+
+
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <script src ="big-number.js"></script>
+      <script src ="token.js"></script>
+      <script src="bundle.js"></script>
+
+  </body>
+</html>
